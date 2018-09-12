@@ -12,9 +12,8 @@ export class xkcdTextService {
       private httpClient: HttpClient
     ) {}
 
-
     public getxkcd() {
-      return this.httpClient.get('https://xkcd.com/614/info.0.json'); //(comic #614)
+      return this.httpClient.get('https://xkcd.com/614/info.0.json', httpOptions); //(comic #614)
       //return this.httpClient.get('http://xkcd.com/info.0.json'); // (current comic)
     }
 }

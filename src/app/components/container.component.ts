@@ -6,6 +6,12 @@ import { xkcdTextService, } from '../services/xkcdtext.service'
   providers: [xkcdTextService],
 })
 export class ContainerComponent {
+  public finalText: string;
+  constructor (private xkcdTextService: xkcdTextService, ) {
+    let apiResult = xkcdTextService.getxkcd().subscribe(
+      success => console.table (success),
+      error => alert(error)
+    );
+  }
 
-  constructor (private xkcdTextService: xkcdTextService, ) {}
 }
