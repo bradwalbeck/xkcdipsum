@@ -1,19 +1,63 @@
-import {Injectable} from '@angular/core';
+import { NgModule } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AltText } from './alttext.data'
 
-const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
+// needs to accept user input to form correct, screen ready, returned text
 @Injectable()
-export class xkcdTextService {
+export class XkcdTextService {
 
-    constructor(
-      private httpClient: HttpClient
-    ) {}
+  private linesperparagraph = 2;
+  private paragraphs = 2;
+  private ipsum = "";
 
-    public getxkcd() {
-      return this.httpClient.get('https://xkcd.com/614/info.0.json', httpOptions); //(comic #614)
-      //return this.httpClient.get('http://xkcd.com/info.0.json'); // (current comic)
+  constructor(
+    private altText: AltText
+  ) { }
+
+  //public getxkcd(): string {
+  //
+  //    this.ipsum = this.getIpsum(this.altText, this.ipsum, this.paragraphs, this.linesperparagraph);
+  //  return this.ipsum;
+  // }
+
+  // ngOnInit() {
+  //
+  //  }
+
+  private getIpsum(altText: AltText, ipsum: string, paragraphs: number, linesperparagraph: number): string {
+
+    if (paragraphs < 1) {
+      // return emoticons
     }
+    if (linesperparagraph < 1) {
+      // return emoticons
+      // return this.altText.[Math.floor(Math.random() * this.emoticons.length)];
+    }
+
+    var ipsumresult: string = ipsum;
+    for (var counter = 0; counter < paragraphs; counter++) {
+      ipsumresult += this.getParagraph(this.linesperparagraph);
+    }
+    return ipsumresult;
+  }
+
+  public getParagraph(altTextsPerParagraph: number, altText: AltText = this.altText): string {
+    if (altTextsPerParagraph < 1) {
+      return this.getEmoticon();
+    }
+    const alttextstringcount = altText.Atltextstrings.length;
+    var paragraph: string = "";
+    for (var counter = 0; counter < altTextsPerParagraph; counter++) {
+      paragraph += altText.Atltextstrings[Math.floor(Math.random() * alttextstringcount)];
+    }
+    return paragraph;
+  }
+
+  private getEmoticon(altText: AltText = this.altText): string {
+    var random: number = Math.floor(Math.random() * altText.Emoticons.length);
+    var randomInt: number = Math.floor(random);
+    return altText.Emoticons[random];
+  }
 }
