@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { XkcdTextService } from '../../services/xkcdtext.service';
 @Component({
   selector: 'ipsumcontainer',
@@ -6,26 +6,34 @@ import { XkcdTextService } from '../../services/xkcdtext.service';
   styleUrls: ['./ipsumcontainer.component.css']
 })
 export class IpsumContainerComponent implements OnInit {
- 
-  public paragraphs: Array<String> = []
-  public linesperparagraph = 2;
-  public paragraphsrequested = 2;
+
+  public linesperparagraph: number = 4;
+  public paragraphsrequested: number = 5;
+  
+
+  public paragraphs: Array<String> = [];
   constructor(
     private xkcdTextService: XkcdTextService
-    ) 
-    { 
-    // can do again on button press or whatever
-   
-  }
+  ) { }
 
   ngOnInit() {
-    this.generateParagraphs();
+    this.paragraphs = this.generateParagraphs();
   }
+  private reGenerateParagraphs(){
+    this.paragraphs = this.generateParagraphs([],this.linesperparagraph,this.paragraphsrequested)
+  }
+  private generateParagraphs (
+    paragraphs: Array<String> = this.paragraphs,
+    linesperparagraph: number = this.linesperparagraph,
+    paragraphsrequested: number = this.paragraphsrequested,
+  ) {
 
-  private generateParagraphs(){
+    if (paragraphsrequested < 1) {
+      paragraphs.push("Too few.... to few.")
+    }
     for (var counter = 0; counter < this.paragraphsrequested; counter++) {
-    this.paragraphs.push(this.xkcdTextService.getParagraph(this.linesperparagraph));
+      paragraphs.push(this.xkcdTextService.getParagraph(this.linesperparagraph));
     };
+    return paragraphs;
   };
-
 }

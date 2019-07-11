@@ -1,3 +1,32 @@
+<form>
+  <div class="form-group">
+    <label for="formControlRange">linesperparagraph</label>
+    <span>
+      {{linesperparagraph}}
+    </span>
+    <input 
+      value={{linesperparagraph}}
+      type="range" 
+      class="form-control-range" 
+      min="-1" max="24" 
+      (change)="generateParagraphs()"
+    >
+    <label for="formControlRange">paragraphsrequested</label>    
+    <span>
+      {{paragraphsrequested}}
+    </span>
+    <input 
+    value={{paragraphsrequested}}
+      type="range" 
+      class="form-control-range" 
+      min = "-1"
+      max = "24"
+      (change)="generateParagraphs()"
+    >
+  </div>
+</form>
+
+
 <div *ngFor="let paragraph of paragraphs">
   <p>{{paragraph}}</p>
 </div>
