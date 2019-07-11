@@ -1,32 +1,48 @@
-<form>
-  <div class="form-group">
-    <label for="formControlRange">linesperparagraph</label>
-    <span>
-      {{linesperparagraph}}
-    </span>
-    <input 
-      value={{linesperparagraph}}
-      type="range" 
-      class="form-control-range" 
-      min="-1" max="24" 
-      (change)="generateParagraphs()"
-    >
-    <label for="formControlRange">paragraphsrequested</label>    
-    <span>
-      {{paragraphsrequested}}
-    </span>
-    <input 
-    value={{paragraphsrequested}}
-      type="range" 
-      class="form-control-range" 
-      min = "-1"
-      max = "24"
-      (change)="generateParagraphs()"
-    >
+<div class="card">
+  <div class="card card-header">
+    <h5>Lines per paragraph</h5>
+    <div class="btn-toolbar mb-3" role="toolbar">
+      <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-primary" (click)="decramentParagraphsRequested()">-</button>
+        <input type="number" class="form-control"
+          disabled = "disabled"
+          placeholder="Lines per paragraph" 
+          value="{{linesperparagraph}}"
+          aria-label="Input group example"
+          aria-describedby="btnGroupAddon" >
+        <button type="button" class="btn btn-primary" (click)="incarmentParagraphsRequested()">+</button>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+
+        </div>
+      </div>
+    </div>
+    <h5>Paragraphs Requested</h5>
+    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group" role="group" aria-label="First group">
+          <button type="button" class="btn btn-primary" (click)="decramentLinesPerParagraph()">-</button>
+          <input type="number" class="form-control"
+            disabled = "disabled"
+            placeholder="No. of paragraphs" 
+            value="{{paragraphsrequested}}"
+            aria-label="Input group example"
+            aria-describedby="btnGroupAddon" >
+          <button type="button" class="btn btn-primary" (click)="incarmentLinesPerParagraph()">+</button>
+      </div>
+    </div>
+
+    <div>
+      <button class="btn btn-primary" (click)="copyMessage()">Copy to clipboard</button>
+      <button class="btn btn-primary" (click)="reGenerateParagraphs()">Do it again</button>
+    </div>
   </div>
-</form>
+</div>
 
-
-<div *ngFor="let paragraph of paragraphs">
-  <p>{{paragraph}}</p>
+<div class="card">
+  <div class="card card-body">
+    <p *ngFor="let paragraph of paragraphs">
+      {{paragraph}}
+    </p>
+  </div>
 </div>
