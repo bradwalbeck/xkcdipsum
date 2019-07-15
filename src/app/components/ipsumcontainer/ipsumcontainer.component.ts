@@ -20,7 +20,6 @@ export class IpsumContainerComponent implements OnInit {
     this.paragraphs = this.generateParagraphs();
   }
   private reGenerateParagraphs() {
-    console.log("linesperparagraph: " + this.linesperparagraph);
     this.paragraphs = this.generateParagraphs([], this.linesperparagraph, this.paragraphsrequested)
   }
   private generateParagraphs(
