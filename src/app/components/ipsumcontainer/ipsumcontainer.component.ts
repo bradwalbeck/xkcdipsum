@@ -10,6 +10,7 @@ export class IpsumContainerComponent implements OnInit {
   public linesperparagraph: number = 8;
   public paragraphsrequested: number = 3;
   public paragraphs: Array<String> = [];
+  public showToast: boolean = false;
 
   constructor(
     private xkcdTextService: XkcdTextService
@@ -18,7 +19,7 @@ export class IpsumContainerComponent implements OnInit {
   ngOnInit() {
     this.paragraphs = this.generateParagraphs();
   }
-  private reGenerateParagraphs(number: Number) {
+  private reGenerateParagraphs() {
     console.log("linesperparagraph: " + this.linesperparagraph);
     this.paragraphs = this.generateParagraphs([], this.linesperparagraph, this.paragraphsrequested)
   }
@@ -28,7 +29,7 @@ export class IpsumContainerComponent implements OnInit {
     paragraphsrequested: number = this.paragraphsrequested,
   ) {
     if (paragraphsrequested < 1) {
-      paragraphs.push("Too few.... to few.")
+      paragraphs.push("Too few paragraphs.... too few.")
     }
     for (var counter = 0; counter < this.paragraphsrequested; counter++) {
       paragraphs.push(this.xkcdTextService.getParagraph(this.linesperparagraph));
@@ -36,19 +37,31 @@ export class IpsumContainerComponent implements OnInit {
     return paragraphs;
   };
 
+
   incarmentParagraphsRequested() {
-    this.linesperparagraph++;
+    if (this.linesperparagraph < 99) {
+      this.linesperparagraph++;
+    }
+    this.reGenerateParagraphs();
   }
   decramentParagraphsRequested() {
-    this.linesperparagraph--;
+    if (this.linesperparagraph >= 0) {
+      this.linesperparagraph--;
+    }
+    this.reGenerateParagraphs();
   }
   incarmentLinesPerParagraph() {
-    this.paragraphsrequested++;
+    if (this.paragraphsrequested < 99) {
+      this.paragraphsrequested++;
+    }
+    this.reGenerateParagraphs();
   }
   decramentLinesPerParagraph() {
-    this.paragraphsrequested--;
+    if (this.paragraphsrequested >= 0) {
+      this.paragraphsrequested--;
+    }
+    this.reGenerateParagraphs();
   }
-
 
   //just re-assemble the paragraphs array much more doable.
   copyMessage(val: string) {
@@ -63,5 +76,22 @@ export class IpsumContainerComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
+    this.displayCopyButtonUserFeedback(2000);
   }
+
+  async displayCopyButtonUserFeedback(ms: number) {
+    this.toggleShowToast()
+    await new Promise(
+      resolve => setTimeout(
+        () => resolve(), ms))
+      .then(
+        () => this.toggleShowToast()
+      );
+
+  }
+
+  toggleShowToast() {
+    this.showToast = !this.showToast;
+  }
+
 }
