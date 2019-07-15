@@ -1,0 +1,1 @@
+for ((i=1;i<=2169;i++)); do curl -v --header "Connection: keep-alive" "https://xkcd.com/$i/info.0.json" >> xkcd.txt; done
