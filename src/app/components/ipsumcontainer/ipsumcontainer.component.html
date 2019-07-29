@@ -2,32 +2,44 @@
   <div class="card">
     <div class="card card-header ">
       <div class="row">
-        <div class="col-4">
-          <h5>Lines per paragraph</h5>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <h5>Lines&nbsp;per&nbsp;paragraph</h5>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-primary" (click)="decramentParagraphsRequested()">-</button>
-            <input type="number" class="form-control" disabled="disabled" placeholder="Lines per paragraph" style="filter: invert(1);"
-              value="{{linesperparagraph}}">
-            <button type="button" class="btn btn-primary" (click)="incarmentParagraphsRequested()">+</button>
+            <button type="button" class="btn btn-primary" (click)="decramentParagraphsRequested()">
+              <img src="../../../assets/images/minus.svg" class="emojismall" />
+            </button>
+            <button type="button" class="btn btn-primary notabuttonanymore" disabled>
+              <h4>{{linesperparagraph}}</h4>
+            </button>
+            <button type="button" class="btn btn-primary" (click)="incarmentParagraphsRequested()">
+              <img src="../../../assets/images/plus.svg" class="emojismall" />
+            </button>
           </div>
         </div>
-        <div class="col-4">
-          <h5>Paragraphs Requested</h5>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <h5>Paragraphs</h5>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-primary" (click)="decramentLinesPerParagraph()">-</button>
-            <input type="number" class="form-control" disabled="disabled" placeholder="No. of paragraphs" style="filter: invert(1);"
-              value="{{paragraphsrequested}}">
-            <button type="button" class="btn btn-primary" (click)="incarmentLinesPerParagraph()">+</button>
+            <button type="button" class="btn btn-primary" (click)="decramentLinesPerParagraph()">
+              <img src="../../../assets/images/minus.svg" class="emojismall" />
+            </button>
+            <button type="button" class="btn btn-primary notabuttonanymore" disabled>
+              <h4>{{paragraphsrequested}}</h4>
+            </button>
+            <button type="button" class="btn btn-primary" (click)="incarmentLinesPerParagraph()">
+              <img src="../../../assets/images/plus.svg" class="emojismall" />
+            </button>
           </div>
         </div>
-        <div class="col-4">
-          <h5>Copy to clipboard</h5>
+        <div class="col-sm-12 col-md-12 col-lg-4">
+          <h5>Copy&nbsp;to&nbsp;clipboard</h5>
           <button type="button" class="btn btn-primary btn-block" (click)="copyMessage()">
-            <img src="../../../assets/images/blackhat.svg" style="filter: invert(1);"/> </button>
+            <img src="../../../assets/images/blackhat.svg" style="filter: invert(1);" />
+          </button>
         </div>
       </div>
     </div>
-    <div class="card card-body" style="border-style: solid white;">
+
+    <div class="card card-body" style="border-color: black;">
       <div class="alert alert-primary d-flex justify-content-center" role="alert" *ngIf="showToast">
         <h5>Copied</h5>
       </div>
@@ -35,5 +47,6 @@
         {{paragraph}}
       </p>
     </div>
+
   </div>
 </div>
