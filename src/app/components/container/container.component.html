@@ -1,40 +1,41 @@
 <div class="container-fluid">
-
-  <div class="row">
-    <div class="card card-default col-10 offset-1 " style="background: black;">
-      <div class="card-body">
-        <img class="float-right" src="/assets/images/cueball.png" />
-        <div class="card-img-overlay">
-          <h1 class="display-4">xkcd ipsum</h1>
-          <p>a lorum ipsum generator based on <a href="https://xkcd.com/">xkcd.com</a> alt text</p>
-          <span class="info-text">"Next time I go, I'm going to prepare a whole bunch<br />of opinions that I'm sure are
-            good, and make everyone<br />sit quietly while I run through them."</span>
-        </div>
+  <div class="card col-md-8 offset-md-2 col-sm-12 offset-sm-0" style="background-color: black; opacity: 0.75;">
+    <div class="card-header" style="background-color: black">
+      <img class="float-right" src="./assets/images/cueball.svg" />
+      <div class="card-img-overlay">
+          <h1 class="display-4" onclick="location.reload();" style="cursor: pointer;">xkcd ipsum</h1>
+        <p>a lorum ipsum generator based on <a href="https://xkcd.com/">xkcd.com</a> alt text</p>
+        <span class="info-text">"Next time I go, I'm going to prepare a whole bunch<br />of opinions that I'm sure are
+          good, and make everyone<br />sit quietly while I run through them."</span>
       </div>
     </div>
-  </div>
-
-  <div class="card col-10 offset-1">
-    <div class="card-body col-10 offset-1">
-      <div class="row">
+    <div class="row">
+      <div class="card card-body">
         <ipsumcontainer></ipsumcontainer>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="card card-default col-10 offset-1 " style="background: black">
-      <div class="card-body">
-        
-          <span style="font-variant: small-caps">© Well Oiled Apps 2019</span><br><span style="font-variant: small-caps">All rights reserved</span>
+
+
+    <div class="row">
+      <div class="card card-header text-nowrap" style="font-weight: bold; background-color: black">
+        <span>
+          Made by
+          <img class="emojismall" src="./../../../assets/images/raised_hand.svg" />
+          with
+          <img class="emojismall" src="./../../../assets/images/test_tube.svg" />
+          Overseen by
+          <img class="emojismall" src="./../../../assets/images/dog.svg" />
+        </span>
+        <span>
+          © 2019 All rights reserved
+          <a style="color: inherit;" href="http:\\welloiledapps.com" target=”_blank”>
+            Well Oiled Apps
+            <img class="emojismall" src="./../../../assets/images/oilonlyicon.png" />
+
+          </a>
+
+        </span>
       </div>
     </div>
-    <div class="container">
-        <p>
-          Made by <img class="emojismall" src="../../../assets/images/raised_hand.svg" />
-      
-          with <img class="emojismall" src="../../../assets/images/test_tube.svg" /> 
-      
-          Overseen by <img class="emojismall" src="../../../assets/images/dog.svg" />
-        </p>
-      </div>
   </div>
+</div>

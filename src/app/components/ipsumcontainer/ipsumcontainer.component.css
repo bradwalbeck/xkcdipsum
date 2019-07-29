@@ -2,3 +2,9 @@
   padding-bottom: 0;
   border-color: black;
 }
+
+h5 {
+
+  text-shadow: none; 
+  font-weight: bold;
+}
