@@ -8,3 +8,7 @@ h5 {
   text-shadow: none; 
   font-weight: bold;
 }
+
+button {
+  margin: 0 0 8px 0;
+}
