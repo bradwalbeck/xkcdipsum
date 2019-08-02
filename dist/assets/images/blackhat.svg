@@ -16,7 +16,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="blackhat.svg">
+   sodipodi:docname="blackhat.svg"
+   inkscape:export-filename="C:\Users\User\Desktop\blackhat.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -24,19 +27,19 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.41176471"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9195959"
-     inkscape:cx="63.86204"
-     inkscape:cy="-10.452347"
+     inkscape:zoom="2.8"
+     inkscape:cx="46.272214"
+     inkscape:cy="-16.488112"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1854"
-     inkscape:window-height="1057"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
+     inkscape:window-width="690"
+     inkscape:window-height="405"
+     inkscape:window-x="2266"
+     inkscape:window-y="189"
+     inkscape:window-maximized="0"
      fit-margin-top="-4"
      fit-margin-left="-1.7"
      fit-margin-right="-2"
@@ -51,7 +54,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
