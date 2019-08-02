@@ -59,6 +59,12 @@ nav a.active {
   color: #039be5;
 }
 
+.emojismall {
+  height: 24px;
+  width: 24;
+}
+
+
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
