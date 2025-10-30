@@ -7,7 +7,7 @@ import { XkcdTextService } from '../../services/xkcdtext.service';
 })
 export class IpsumContainerComponent implements OnInit {
 
-  public linesperparagraph: number = 8;
+  public linesperparagraph: number = 5;
   public paragraphsrequested: number = 3;
   public paragraphs: Array<String> = [];
   public showToast: boolean = false;
